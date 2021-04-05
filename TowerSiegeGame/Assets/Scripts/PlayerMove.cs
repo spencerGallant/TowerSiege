@@ -38,4 +38,10 @@ public class PlayerMove : MonoBehaviour
 			this.transform.position = position;
 		}
 	}
+
+    public void DeactivatePlayer()
+    {
+		Debug.Log("PlayerMove");
+		//Destroy(gameObject);
+	}
 }

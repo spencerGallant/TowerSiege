@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   numWaypoints: 3
+  spawnPointIndex: 0
