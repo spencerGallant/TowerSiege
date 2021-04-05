@@ -7,28 +7,26 @@ using UnityEngine.UI;
 public class SpawnUnits : MonoBehaviour
 {
     public Text unitCountText;
-    public float interval;
     public GameObject unit;
-    public GameObject spawn;
+    public GameObject spawnPoint;
+    public float interval;
+    public int spawnIndex;
 
     private int unitCount;
     private bool spawning;
     private float timeRemaining;
-    private Vector3 spawnPos;
 
     // Start is called before the first frame update
     void Start()
     {
         spawning = false;
         timeRemaining = interval;
-        spawnPos = spawn.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // eventually have gameObjects of different units, for now it's just knights
-        // will also have multiple unit counts
+        // TODO: Support more than one unit type.
         unitCount = Int32.Parse(unitCountText.text);
         if (spawning && unitCount > 0)
         {
@@ -38,7 +36,10 @@ public class SpawnUnits : MonoBehaviour
             } 
             else
             {
-                Instantiate(unit, spawnPos, Quaternion.identity);
+                GameObject unitClone = Instantiate(unit, spawnPoint.transform.position, Quaternion.identity);
+                UnitMove unitMove = unitClone.GetComponent<UnitMove>();
+                // Set the spawnIndex field of the unit's UnitMove.cs so that it knows which waypoints to go to.
+                unitMove.spawnIndex = spawnIndex;
                 unitCount -= 1;
                 unitCountText.text = unitCount.ToString();
                 timeRemaining = interval;

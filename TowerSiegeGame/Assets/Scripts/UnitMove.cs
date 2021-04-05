@@ -5,20 +5,20 @@ using UnityEngine;
 public class UnitMove : MonoBehaviour
 {
     public float speed;
-    // object must know this automatically when spawning
-    public int numWaypoints;
-    public int spawnPointIndex;
+    public int spawnIndex; // Set by SpawnUnits.cs when the unit is instantiated.
 
     private Vector2[] waypoints;
+    private int numWaypoints;
     private int waypointIndex;
 
     // Start is called before the first frame update
     void Start()
     {
+        numWaypoints = GameObject.Find("waypoints" + spawnIndex).transform.childCount;
         waypoints = new Vector2[numWaypoints];
         for (int i = 0; i < numWaypoints; i++)
         {
-            waypoints[i] = GameObject.Find("waypoints0/waypoint" + i).transform.position;
+            waypoints[i] = GameObject.Find("waypoints" + spawnIndex + "/waypoint" + i).transform.position;
         }
         waypointIndex = 0;
     }
