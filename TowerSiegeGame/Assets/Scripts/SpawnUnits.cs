@@ -11,11 +11,21 @@ public class SpawnUnits : MonoBehaviour
     public static GameObject currentUnitType;
     public List<GameObject> units = new List<GameObject>();
 
+    public GameObject vassal;
     public GameObject knight;
-    public GameObject archer;
-    public Button knightButton;
-    public Button archerButton;
+    public GameObject mercenary;
+    public GameObject footLancer;
+    public GameObject footArcher;
+    public GameObject artisan;
+    public GameObject peasant;
 
+    public Button vassalButton;
+    public Button knightButton;
+    public Button mercenaryButton;
+    public Button footLancerButton;
+    public Button archerButton;
+    public Button artisanButton;
+    public Button peasantButton;
     
     public GameObject spawnPoint ;
     public float interval;
@@ -30,8 +40,8 @@ public class SpawnUnits : MonoBehaviour
     {
         spawning = false;
         timeRemaining = interval;
-        currentUnitType = knight;
-        knightButton.GetComponent<Image>().color = Color.green;
+        currentUnitType = peasant;
+        peasantButton.GetComponent<Image>().color = Color.green;
     }
 
     // Update is called once per frame
@@ -76,15 +86,80 @@ public class SpawnUnits : MonoBehaviour
         units.Add(currentUnitType);
     }
 
-    public void SpawnKnights() {
-        currentUnitType = knight;
-        knightButton.GetComponent<Image>().color = Color.green;
+    public void SpawnVassal() {
+        currentUnitType = vassal;
+        vassalButton.GetComponent<Image>().color = Color.green;
+        knightButton.GetComponent<Image>().color = Color.white;
+        mercenaryButton.GetComponent<Image>().color = Color.white;
+        footLancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
+        artisanButton.GetComponent<Image>().color = Color.white;
+        peasantButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void SpawnKnight() {
+        currentUnitType = knight;
+        vassalButton.GetComponent<Image>().color = Color.white;
+        knightButton.GetComponent<Image>().color = Color.green;
+        mercenaryButton.GetComponent<Image>().color = Color.white;
+        footLancerButton.GetComponent<Image>().color = Color.white;
+        archerButton.GetComponent<Image>().color = Color.white;
+        artisanButton.GetComponent<Image>().color = Color.white;
+        peasantButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void SpawnMercenary() {
+        currentUnitType = mercenary;
+        vassalButton.GetComponent<Image>().color = Color.white;
+        knightButton.GetComponent<Image>().color = Color.white;
+        mercenaryButton.GetComponent<Image>().color = Color.green;
+        footLancerButton.GetComponent<Image>().color = Color.white;
+        archerButton.GetComponent<Image>().color = Color.white;
+        artisanButton.GetComponent<Image>().color = Color.white;
+        peasantButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void SpawnFootLancer() {
+        currentUnitType = footLancer;
+        vassalButton.GetComponent<Image>().color = Color.white;
+        knightButton.GetComponent<Image>().color = Color.white;
+        mercenaryButton.GetComponent<Image>().color = Color.white;
+        footLancerButton.GetComponent<Image>().color = Color.green;
+        archerButton.GetComponent<Image>().color = Color.white;
+        artisanButton.GetComponent<Image>().color = Color.white;
+        peasantButton.GetComponent<Image>().color = Color.white;
     }
 
     public void SpawnArcher() {
-        currentUnitType = archer;
+        currentUnitType = footArcher;
+        vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
+        mercenaryButton.GetComponent<Image>().color = Color.white;
+        footLancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.green;
+        artisanButton.GetComponent<Image>().color = Color.white;
+        peasantButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void SpawnArtisan() {
+        currentUnitType = artisan;
+        vassalButton.GetComponent<Image>().color = Color.white;
+        knightButton.GetComponent<Image>().color = Color.white;
+        mercenaryButton.GetComponent<Image>().color = Color.white;
+        footLancerButton.GetComponent<Image>().color = Color.white;
+        archerButton.GetComponent<Image>().color = Color.white;
+        artisanButton.GetComponent<Image>().color = Color.green;
+        peasantButton.GetComponent<Image>().color = Color.white;
+    }
+
+    public void SpawnPeasant() {
+        currentUnitType = peasant;
+        vassalButton.GetComponent<Image>().color = Color.white;
+        knightButton.GetComponent<Image>().color = Color.white;
+        mercenaryButton.GetComponent<Image>().color = Color.white;
+        footLancerButton.GetComponent<Image>().color = Color.white;
+        archerButton.GetComponent<Image>().color = Color.white;
+        artisanButton.GetComponent<Image>().color = Color.white;
+        peasantButton.GetComponent<Image>().color = Color.green;
     }
 }
