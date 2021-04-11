@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerShoot : MonoBehaviour
+public class Tower : MonoBehaviour
 {
     public GameObject projectile;
     public float interval;
@@ -31,14 +31,13 @@ public class TowerShoot : MonoBehaviour
         else
         {
             GameObject projectileClone = Instantiate(projectile, transform.position, Quaternion.identity);
-            ProjectileMove projectileMove = projectileClone.GetComponent<ProjectileMove>();
-            projectileMove.target = ClosestUnit();
+            projectileClone.GetComponent<Projectile>().setTarget(ClosestUnit());
             timeRemaining = interval;
         }
     }
 
-    // Returns the position of the closest unit to the tower. Returns an uninitialized Vector3 if no units are present.
-    Vector3 ClosestUnit()
+    // Returns the position of the closest unit to the tower.
+    private Vector3 ClosestUnit()
     {
         Vector3 closest = new Vector3();
         float shortestDist = Mathf.Infinity;

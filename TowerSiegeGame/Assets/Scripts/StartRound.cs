@@ -8,7 +8,7 @@ public class StartRound : MonoBehaviour
     public Text timer;
     public float time;
 
-    private float timeLeft;
+    public float timeLeft;
     private bool timerStarted;
 
     // Start is called before the first frame update

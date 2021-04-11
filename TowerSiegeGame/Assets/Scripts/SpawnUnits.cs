@@ -59,9 +59,7 @@ public class SpawnUnits : MonoBehaviour
             {
                 GameObject unitClone = Instantiate(units[0], spawnPoint.transform.position, Quaternion.identity);
                 units.RemoveAt(0);
-                UnitMove unitMove = unitClone.GetComponent<UnitMove>();
-                // Set the spawnIndex field of the unit's UnitMove.cs so that it knows which waypoints to go to.
-                unitMove.spawnIndex = spawnIndex;
+                unitClone.GetComponent<Unit>().setSpawnIndex(spawnIndex);
                 unitCount -= 1;
                 unitCountText.text = unitCount.ToString();
                 timeRemaining = interval;

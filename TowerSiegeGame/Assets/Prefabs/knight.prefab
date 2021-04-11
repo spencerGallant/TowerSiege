@@ -188,7 +188,6 @@ GameObject:
   - component: {fileID: 1249912850494636721}
   - component: {fileID: 2724756837376790277}
   - component: {fileID: 1978991333799170204}
-  - component: {fileID: 3611905773309061154}
   m_Layer: 0
   m_Name: knight
   m_TagString: Unit
@@ -320,18 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7660ccf1940e8e41b70e4a1acb99d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  spawnIndex: 0
---- !u!114 &3611905773309061154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5573906633641542603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7bb1017ebd4efb4cb10030ba0345b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   health: 2
+  speed: 3
+  damage: 1

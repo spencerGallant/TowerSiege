@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
+	public int health;
 	public float speed;
+
+	private TextMeshPro healthText;
+
     // Start is called before the first frame update
 	void Start()
 	{
-
+		// Set the health text.
+		healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
+		healthText.SetText(health.ToString());
 	}
 
+	// Update is called once per frame
 	void Update()
 	{
+		// Control the player's movement.
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			Vector3 position = this.transform.position;
@@ -39,9 +48,14 @@ public class PlayerMove : MonoBehaviour
 		}
 	}
 
-    public void DeactivatePlayer()
+	// Take damage and deactivate if health falls below zero.
+	public void takeDamage(int damage)
     {
-		Debug.Log("PlayerMove");
-		//Destroy(gameObject);
+		health -= damage;
+		healthText.SetText(health.ToString());
+		if (health <= 0)
+		{
+			gameObject.SetActive(false);
+		}
 	}
 }
