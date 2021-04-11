@@ -8,6 +8,14 @@ public class PauseMenu : MonoBehaviour
 	public static bool isPaused = false;
 	public GameObject pauseMenuUI;
 	public GameObject pauseIcon;
+
+    private GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     	Time.timeScale = 1f;
     	isPaused = false;
     	pauseIcon.SetActive(true);
+        player.GetComponent<Player>().unfreeze();
     }
 
     public void Pause() {
@@ -29,6 +38,7 @@ public class PauseMenu : MonoBehaviour
     	Time.timeScale = 0f;
     	isPaused = true;
     	pauseIcon.SetActive(false);
+        player.GetComponent<Player>().freeze();
     }
 
     public void Quit() {

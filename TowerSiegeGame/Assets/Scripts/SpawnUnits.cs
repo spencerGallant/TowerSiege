@@ -27,7 +27,7 @@ public class SpawnUnits : MonoBehaviour
     public Button artisanButton;
     public Button peasantButton;
     
-    public GameObject spawnPoint ;
+    public GameObject spawnPoint;
     public float interval;
     public int spawnIndex;
 
@@ -47,10 +47,10 @@ public class SpawnUnits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TODO: Support more than one unit type.
         unitCount = Int32.Parse(unitCountText.text);
         if (spawning && unitCount > 0)
         {
+            // Debug.Log("spawning");
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;

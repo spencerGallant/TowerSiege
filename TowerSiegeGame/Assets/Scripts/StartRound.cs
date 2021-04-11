@@ -1,21 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class StartRound : MonoBehaviour
 {
-    public Text timer;
     public float time;
 
-    public float timeLeft;
+    private TextMeshProUGUI timerText;
+    private float timeLeft;
     private bool timerStarted;
 
     // Start is called before the first frame update
     void Start()
     {
+        timerText = transform.Find("timerText").gameObject.GetComponent<TextMeshProUGUI>();
         timerStarted = false;
         timeLeft = time;
+        setTimerText();
     }
 
     // Update is called once per frame
@@ -26,24 +28,40 @@ public class StartRound : MonoBehaviour
             if (timeLeft > 0)
             {
                 timeLeft -= Time.deltaTime;
-                SetTimerText();
+                setTimerText();
             }
             else
             {
-                timeLeft = time;
-                SetTimerText();
+                timeLeft = 0;
+                setTimerText();
                 timerStarted = false;
             }
         }
     }
 
-    public void StartTimer()
+    public void startTimer()
     {
+        if (!timerStarted)
+        {
+            timeLeft = time;
+        }
         timerStarted = true;
     }
 
-    void SetTimerText()
+    public bool timeUp()
     {
-        timer.text = "Time: " + timeLeft.ToString("0");
+        if (timeLeft > 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    private void setTimerText()
+    {
+        timerText.SetText("Time: " + timeLeft.ToString("0"));
     }
 }

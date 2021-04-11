@@ -8,7 +8,6 @@ public class Castle : MonoBehaviour
     public int health;
 
     private TextMeshPro healthText;
-    private bool destroyed;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +15,6 @@ public class Castle : MonoBehaviour
         // Set the health text to the current health.
         healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
         healthText.SetText(health.ToString());
-
-        destroyed = false;
     }
 
     // Update is called once per frame
@@ -34,12 +31,6 @@ public class Castle : MonoBehaviour
         if (health <= 0)
         {
             gameObject.SetActive(false);
-            destroyed = true;
         }
-    }
-
-    public bool isDestroyed()
-    {
-        return destroyed;
     }
 }
