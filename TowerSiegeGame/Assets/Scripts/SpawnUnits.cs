@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class SpawnUnits : MonoBehaviour
 {
     public Text unitCountText;
     public static GameObject currentUnitType;
-    public static StartRound currency;
     public List<GameObject> units = new List<GameObject>();
 
     public GameObject vassal;
@@ -37,6 +37,9 @@ public class SpawnUnits : MonoBehaviour
     private bool spawning;
     private float timeRemaining;
 
+    public GameObject startRound;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,7 @@ public class SpawnUnits : MonoBehaviour
         timeRemaining = interval;
         currentUnitType = peasant;
         peasantButton.GetComponent<Image>().color = Color.green;
+
     }
 
     // Update is called once per frame
@@ -84,7 +88,11 @@ public class SpawnUnits : MonoBehaviour
 
     public void AddUnit() {
         units.Add(currentUnitType);
-        //currency.currentGold = currency.currentGold - cost;
+    }
+
+    public int getCost()
+    {
+        return cost;
     }
 
     public void SpawnVassal() {

@@ -15,7 +15,7 @@ public class StartRound : MonoBehaviour
     public int income;
     public int incomeTime;
 
-    private TextMeshProUGUI goldText;
+    public TextMeshProUGUI goldText;
     public float currentGold;
     private float incomeTimer = 60;
 
@@ -85,19 +85,24 @@ public class StartRound : MonoBehaviour
 
     public void addIncome()
     {
-        Debug.Log("in add income");
+        //Debug.Log("in add income");
         currentGold += income;
         setGoldText();
     }
 
-    public void buyUnit(int x)
+    public bool buyUnit(int x)
     {
+        if (currentGold - x < 0)
+        {
+            return false;
+        }
         currentGold -= x;
         setGoldText();
+        return true;
     }
 
     private void setGoldText()
     {
-        goldText.SetText("Time: " + currentGold.ToString("0"));
+        goldText.SetText("Gold: " + currentGold.ToString("0"));
     }
 }

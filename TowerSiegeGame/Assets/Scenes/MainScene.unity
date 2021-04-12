@@ -263,6 +263,16 @@ PrefabInstance:
       propertyPath: unitCountText
       value: 
       objectReference: {fileID: 1660840702}
+    - target: {fileID: 3918661323684128008, guid: 3058ff0319151b244aa91ed63beeb37b,
+        type: 3}
+      propertyPath: startRound
+      value: 
+      objectReference: {fileID: 1366459453}
+    - target: {fileID: 3918661323684128008, guid: 3058ff0319151b244aa91ed63beeb37b,
+        type: 3}
+      propertyPath: spawnUnits
+      value: 
+      objectReference: {fileID: 1399626076}
     - target: {fileID: 3918661323684128052, guid: 3058ff0319151b244aa91ed63beeb37b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2474,7 +2484,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1639254210}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1077851367}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d208414f5a736c4ebe2cb8d10a55525, type: 3}
@@ -4126,6 +4136,16 @@ PrefabInstance:
       propertyPath: peasantButton
       value: 
       objectReference: {fileID: 1074586928}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: startRound
+      value: 
+      objectReference: {fileID: 1366459453}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: cost
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4150039142557414578, guid: 667acb2783a077f4f93c7d67e497d228,
         type: 3}
       propertyPath: m_Name
@@ -5193,6 +5213,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074586926}
   m_CullTransparentMesh: 0
+--- !u!1 &1077851367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4150039143557101144, guid: 667acb2783a077f4f93c7d67e497d228,
+    type: 3}
+  m_PrefabInstance: {fileID: 1639254210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1078071181 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3918661323684128052, guid: 3058ff0319151b244aa91ed63beeb37b,
@@ -6058,6 +6084,8 @@ MonoBehaviour:
   gold: 1000
   income: 100
   incomeTime: 3
+  goldText: {fileID: 0}
+  currentGold: 0
 --- !u!114 &1366459461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6161,6 +6189,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7796446084767904535, guid: b1842486b1c75db48b24bf71687db788,
     type: 3}
   m_PrefabInstance: {fileID: 498658285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1399626076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4150039143557101144, guid: 667acb2783a077f4f93c7d67e497d228,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543194111}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1402422849
 PrefabInstance:
@@ -6292,6 +6326,16 @@ PrefabInstance:
       propertyPath: unitCountText
       value: 
       objectReference: {fileID: 315177868}
+    - target: {fileID: 3918661323684128008, guid: 3058ff0319151b244aa91ed63beeb37b,
+        type: 3}
+      propertyPath: startRound
+      value: 
+      objectReference: {fileID: 1366459453}
+    - target: {fileID: 3918661323684128008, guid: 3058ff0319151b244aa91ed63beeb37b,
+        type: 3}
+      propertyPath: spawnUnits
+      value: 
+      objectReference: {fileID: 1581813208}
     - target: {fileID: 3918661323684128010, guid: 3058ff0319151b244aa91ed63beeb37b,
         type: 3}
       propertyPath: m_Color.r
@@ -6689,7 +6733,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 923860986}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1581813208}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d208414f5a736c4ebe2cb8d10a55525, type: 3}
@@ -6857,6 +6901,16 @@ PrefabInstance:
       propertyPath: peasantButton
       value: 
       objectReference: {fileID: 1074586928}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: startRound
+      value: 
+      objectReference: {fileID: 1366459453}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: cost
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4150039142557414578, guid: 667acb2783a077f4f93c7d67e497d228,
         type: 3}
       propertyPath: m_Name
@@ -7122,6 +7176,16 @@ PrefabInstance:
       propertyPath: unitCountText
       value: 
       objectReference: {fileID: 1299247316}
+    - target: {fileID: 3918661323684128008, guid: 3058ff0319151b244aa91ed63beeb37b,
+        type: 3}
+      propertyPath: startRound
+      value: 
+      objectReference: {fileID: 1366459453}
+    - target: {fileID: 3918661323684128008, guid: 3058ff0319151b244aa91ed63beeb37b,
+        type: 3}
+      propertyPath: spawnUnits
+      value: 
+      objectReference: {fileID: 1077851367}
     - target: {fileID: 3918661323684128052, guid: 3058ff0319151b244aa91ed63beeb37b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7402,6 +7466,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575152132}
   m_CullTransparentMesh: 0
+--- !u!1 &1581813208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4150039143557101144, guid: 667acb2783a077f4f93c7d67e497d228,
+    type: 3}
+  m_PrefabInstance: {fileID: 923860986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1621013306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7802,6 +7872,16 @@ PrefabInstance:
       propertyPath: peasantButton
       value: 
       objectReference: {fileID: 1074586928}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: startRound
+      value: 
+      objectReference: {fileID: 1366459453}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: cost
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4150039142557414578, guid: 667acb2783a077f4f93c7d67e497d228,
         type: 3}
       propertyPath: m_Name
@@ -8459,7 +8539,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1543194111}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1399626076}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d208414f5a736c4ebe2cb8d10a55525, type: 3}
