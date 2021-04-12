@@ -31,13 +31,14 @@ public class SpawnUnits : MonoBehaviour
     public GameObject spawnPoint;
     public float interval;
     public int spawnIndex;
-    public int cost;
+    // public int cost;
 
     private int unitCount;
     private bool spawning;
     private float timeRemaining;
 
     public GameObject startRound;
+    public GameObject queueButton;
 
 
     // Start is called before the first frame update
@@ -87,13 +88,21 @@ public class SpawnUnits : MonoBehaviour
     }
 
     public void AddUnit() {
-        units.Add(currentUnitType);
+        int unitCost = currentUnitType.GetComponent<Unit>().cost;
+        bool unitBought = startRound.GetComponent<StartRound>().buyUnit(unitCost);
+        if (unitBought)
+        {
+            units.Add(currentUnitType);
+            queueButton.GetComponent<QueueUnit>().Queue();
+        }
     }
 
+    /*
     public int getCost()
     {
         return cost;
     }
+    */
 
     public void SpawnVassal() {
         currentUnitType = vassal;

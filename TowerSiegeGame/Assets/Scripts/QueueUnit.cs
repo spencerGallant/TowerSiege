@@ -29,11 +29,13 @@ public class QueueUnit : MonoBehaviour
     public void Queue()
     {
         Debug.Log("in queue");
+        /*
         cost = spawnUnits.GetComponent<SpawnUnits>().getCost();
         if (!startRound.GetComponent<StartRound>().buyUnit(cost))
         {
             return;
         }
+        */
 
         unitCount = Int32.Parse(unitCountText.text);
         unitCount++;
