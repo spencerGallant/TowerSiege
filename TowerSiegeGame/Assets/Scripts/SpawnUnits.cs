@@ -9,6 +9,7 @@ public class SpawnUnits : MonoBehaviour
 {
     public Text unitCountText;
     public static GameObject currentUnitType;
+    public static StartRound currency;
     public List<GameObject> units = new List<GameObject>();
 
     public GameObject vassal;
@@ -30,6 +31,7 @@ public class SpawnUnits : MonoBehaviour
     public GameObject spawnPoint;
     public float interval;
     public int spawnIndex;
+    public int cost;
 
     private int unitCount;
     private bool spawning;
@@ -82,6 +84,7 @@ public class SpawnUnits : MonoBehaviour
 
     public void AddUnit() {
         units.Add(currentUnitType);
+        //currency.currentGold = currency.currentGold - cost;
     }
 
     public void SpawnVassal() {

@@ -8,6 +8,7 @@ public class Unit : MonoBehaviour
     public int health;
     public float speed;
     public int damage;
+    public int cost;
 
     private TextMeshPro healthText;
     private int spawnIndex;

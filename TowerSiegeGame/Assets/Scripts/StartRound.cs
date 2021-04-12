@@ -11,6 +11,15 @@ public class StartRound : MonoBehaviour
     private float timeLeft;
     private bool timerStarted;
 
+    public int gold;
+    public int income;
+    public int incomeTime;
+
+    private TextMeshProUGUI goldText;
+    public float currentGold;
+    private float incomeTimer = 60;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +27,10 @@ public class StartRound : MonoBehaviour
         timerStarted = false;
         timeLeft = time;
         setTimerText();
+
+        goldText = transform.Find("currency").gameObject.GetComponent<TextMeshProUGUI>();
+        currentGold = gold;
+        setGoldText();
     }
 
     // Update is called once per frame
@@ -35,6 +48,11 @@ public class StartRound : MonoBehaviour
                 timeLeft = 0;
                 setTimerText();
                 timerStarted = false;
+            }
+            if (timeLeft < incomeTimer)
+            {
+                incomeTimer -= incomeTime;
+                addIncome();
             }
         }
     }
@@ -63,5 +81,23 @@ public class StartRound : MonoBehaviour
     private void setTimerText()
     {
         timerText.SetText("Time: " + timeLeft.ToString("0"));
+    }
+
+    public void addIncome()
+    {
+        Debug.Log("in add income");
+        currentGold += income;
+        setGoldText();
+    }
+
+    public void buyUnit(int x)
+    {
+        currentGold -= x;
+        setGoldText();
+    }
+
+    private void setGoldText()
+    {
+        goldText.SetText("Time: " + currentGold.ToString("0"));
     }
 }

@@ -24,6 +24,7 @@ public class QueueUnit : MonoBehaviour
 
     public void Queue()
     {
+        Debug.Log("in queue unit ting");
         unitCount = Int32.Parse(unitCountText.text);
         unitCount++;
         unitCountText.text = unitCount.ToString();
