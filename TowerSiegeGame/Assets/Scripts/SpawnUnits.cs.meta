@@ -3,7 +3,35 @@ guid: 3d208414f5a736c4ebe2cb8d10a55525
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - unitCountText: {instanceID: 0}
+  - vassal: {fileID: 5573906633641542603, guid: f6ba0cf869fba4f9a8434d6935bd8464,
+      type: 3}
+  - knight: {fileID: 5573906633641542603, guid: b459d919a55844bc3b2ef07e9ee7e23f,
+      type: 3}
+  - mercenary: {fileID: 5573906633641542603, guid: dcc60d213a2e44b85900ef7573c954ae,
+      type: 3}
+  - footLancer: {fileID: 5573906633641542603, guid: 0b8af5296e1604c83bc4e24fb47a7042,
+      type: 3}
+  - footArcher: {fileID: 2667252691115896955, guid: 971509caa4b614b6d95f2e9f8f61d514,
+      type: 3}
+  - artisan: {fileID: 5573906633641542603, guid: 425d5b69890b64a1faa97b00046f999d,
+      type: 3}
+  - peasant: {fileID: 933054599605608352, guid: c26b8a8f6692171408d262afdc546d6d,
+      type: 3}
+  - vassalButton: {instanceID: 0}
+  - knightButton: {instanceID: 0}
+  - mercenaryButton: {instanceID: 0}
+  - footLancerButton: {instanceID: 0}
+  - archerButton: {instanceID: 0}
+  - artisanButton: {instanceID: 0}
+  - peasantButton: {instanceID: 0}
+  - spawnPoint: {fileID: 4557159902570077928, guid: f79a3aac55092bf4eba29c9a85b2b994,
+      type: 3}
+  - startRound: {fileID: 4150039143557101144, guid: 667acb2783a077f4f93c7d67e497d228,
+      type: 3}
+  - queueButton: {fileID: 3918661323684128055, guid: 3058ff0319151b244aa91ed63beeb37b,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
