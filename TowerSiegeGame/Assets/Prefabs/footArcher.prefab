@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4497683041732987650}
   - component: {fileID: 4192357356505665094}
-  - component: {fileID: 1746888100665825593}
   - component: {fileID: 999348380819944044}
   - component: {fileID: 6868567826929261397}
   - component: {fileID: 1313116555061010301}
+  - component: {fileID: 1746888100665825593}
   m_Layer: 0
   m_Name: footArcher
   m_TagString: Unit
@@ -87,25 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1746888100665825593
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4881600605423940039}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 63288c991cdaa4791aeb68617f1348b9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &999348380819944044
 Rigidbody2D:
   serializedVersion: 4
@@ -165,10 +146,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7660ccf1940e8e41b70e4a1acb99d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  speed: 1
+  health: 2
+  speed: 2
   damage: 2
-  cost: 50
+  cost: 150
+--- !u!95 &1746888100665825593
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4881600605423940039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63288c991cdaa4791aeb68617f1348b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6974406865410562887
 GameObject:
   m_ObjectHideFlags: 0
