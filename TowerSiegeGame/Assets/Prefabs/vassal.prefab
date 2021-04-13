@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 2724756837376790277}
   - component: {fileID: 1978991333799170204}
   m_Layer: 0
-  m_Name: vassal
+  m_Name: Vassal
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,3 +322,4 @@ MonoBehaviour:
   health: 2
   speed: 3
   damage: 1
+  cost: 100

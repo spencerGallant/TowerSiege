@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Display the end menu.
+ * Keep this script attached to the GameController object
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,8 +11,9 @@ using TMPro;
 
 public class EndMenu : MonoBehaviour
 {
-    private GameObject endMenu;
-    private TextMeshProUGUI endText;
+    public GameObject endMenu;
+    public GameObject endText;
+
     private GameObject castle;
     private GameObject player;
     private bool reloading;
@@ -15,8 +21,6 @@ public class EndMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        endMenu = transform.Find("endMenu").gameObject;
-        endText = endMenu.transform.Find("endText").gameObject.GetComponent<TextMeshProUGUI>();
         castle = GameObject.FindGameObjectWithTag("Castle");
         player = GameObject.FindGameObjectWithTag("Player");
         reloading = false;
@@ -28,23 +32,23 @@ public class EndMenu : MonoBehaviour
         // End the game if the castle is destroyed.
         if (!castle.activeSelf)
         {
-            displayEndMenu("CONGRATULATIONS\nYou destroyed the castle.");
+            DisplayEndMenu("CONGRATULATIONS\nYou destroyed the castle.");
         }
 
         // End the game if the player dies.
         if (!player.activeSelf)
         {
-            displayEndMenu("GAME OVER\nYou died.");
+            DisplayEndMenu("GAME OVER\nYou died.");
         }
 
         // End the game if time runs out.
-        if (gameObject.GetComponent<StartRound>().timeUp())
+        if (gameObject.GetComponent<RoundTimer>().TimeUp())
         {
-            displayEndMenu("GAME OVER\nTime ran out.");
+            DisplayEndMenu("GAME OVER\nTime ran out.");
         }
     }
 
-    public void retry()
+    public void Retry()
     {
         reloading = true;
         Time.timeScale = 1f;
@@ -52,18 +56,18 @@ public class EndMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("MainScene");
     }
 
-    public void loadMainMenu()
+    public void LoadMainMenu()
     {
         SceneManager.LoadSceneAsync("TitleScreen");
     }
 
-    public void quit()
+    public void Quit()
     {
         Application.Quit();
     }
 
     // Display the end menu and set the end text.
-    private void displayEndMenu(string endMessage)
+    private void DisplayEndMenu(string endMessage)
     {
         if (!reloading)
         {
@@ -71,6 +75,6 @@ public class EndMenu : MonoBehaviour
             player.GetComponent<Player>().freeze();
         }
         endMenu.SetActive(true);
-        endText.SetText(endMessage);
+        endText.GetComponent<TextMeshProUGUI>().SetText(endMessage);
     }
 }

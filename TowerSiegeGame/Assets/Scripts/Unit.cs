@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Contain information about a unit.
+ * Attach this script to a unit prefab and set attributes as desired.
+ * Note: To add waypoints, follow the pattern in the hierarcy exactly. Units will traverse the waypoints in order.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -11,8 +17,8 @@ public class Unit : MonoBehaviour
     public int cost;
 
     private TextMeshPro healthText;
-    private int spawnIndex;
     private Vector2[] waypoints;
+    private int spawnIndex;
     private int numWaypoints;
     private int waypointIndex;
 
@@ -20,11 +26,11 @@ public class Unit : MonoBehaviour
     void Start()
     {
         // Store the waypoint transform coordinates in waypoints[].
-        numWaypoints = GameObject.Find("waypoints" + spawnIndex).transform.childCount;
+        numWaypoints = GameObject.Find("Waypoints" + spawnIndex).transform.childCount;
         waypoints = new Vector2[numWaypoints];
         for (int i = 0; i < numWaypoints; i++)
         {
-            waypoints[i] = GameObject.Find("waypoints" + spawnIndex + "/waypoint" + i).transform.position;
+            waypoints[i] = GameObject.Find("Waypoints" + spawnIndex + "/Waypoint" + i).transform.position;
         }
 
         // Set the first waypoint index to zero.
@@ -56,16 +62,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // Damage the castle and destroy unit on collision.
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Castle"))
-        {
-            collision.gameObject.GetComponent<Castle>().takeDamage(damage);
-            Destroy(gameObject);
-        }
-    }
-
     // Set the spawn index to determine which waypoints the unit follows.
     public void setSpawnIndex(int index)
     {
@@ -79,6 +75,16 @@ public class Unit : MonoBehaviour
         healthText.SetText(health.ToString());
         if (health <= 0)
         {
+            Destroy(gameObject);
+        }
+    }
+
+    // Damage the castle and destroy unit on collision.
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Castle"))
+        {
+            collision.gameObject.GetComponent<Castle>().takeDamage(damage);
             Destroy(gameObject);
         }
     }
