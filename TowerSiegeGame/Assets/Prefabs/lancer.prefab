@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2543798099501572109}
   - component: {fileID: 6795407604761409963}
   m_Layer: 0
-  m_Name: footLancerHealthText
+  m_Name: LancerHealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: 5607600897414566271}
   m_Layer: 0
-  m_Name: lancer
+  m_Name: Lancer
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -325,7 +325,6 @@ MonoBehaviour:
   speed: 5
   damage: 2
   cost: 200
-  healthText: {fileID: 0}
 --- !u!95 &5607600897414566271
 Animator:
   serializedVersion: 3

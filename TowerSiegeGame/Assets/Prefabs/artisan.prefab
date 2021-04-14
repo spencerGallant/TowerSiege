@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2543798099501572109}
   - component: {fileID: 6795407604761409963}
   m_Layer: 0
-  m_Name: artisanHealthText
+  m_Name: ArtisanHealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: -7426921814964593403}
   m_Layer: 0
-  m_Name: artisan
+  m_Name: Artisan
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,44 +8,47 @@ public class Player : MonoBehaviour
 	public int health;
 	public float speed;
 
+	private GameObject gameController;
 	private TextMeshPro healthText;
 	private bool frozen;
 
-    // Start is called before the first frame update
+	// Start is called before the first frame update
 	void Start()
 	{
+		gameController = GameObject.FindGameObjectWithTag("GameController");
+
+		frozen = false;
+
 		// Set the health text.
 		healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
 		healthText.SetText(health.ToString());
-
-		frozen = false;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (!frozen)
-        {
+		if (!frozen && gameController.GetComponent<RoundTimer>().RoundStarted())
+		{
 			// Control the player's movement.
-			if (Input.GetKey(KeyCode.LeftArrow))
+			if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
 			{
 				Vector3 position = this.transform.position;
 				position.x = position.x - speed;
 				this.transform.position = position;
 			}
-			if (Input.GetKey(KeyCode.RightArrow))
+			if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
 			{
 				Vector3 position = this.transform.position;
 				position.x = position.x + speed;
 				this.transform.position = position;
 			}
-			if (Input.GetKey(KeyCode.UpArrow))
+			if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
 			{
 				Vector3 position = this.transform.position;
 				position.y = position.y + speed;
 				this.transform.position = position;
 			}
-			if (Input.GetKey(KeyCode.DownArrow))
+			if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
 			{
 				Vector3 position = this.transform.position;
 				position.y = position.y - speed;
@@ -56,7 +59,7 @@ public class Player : MonoBehaviour
 
 	// Take damage and deactivate if health falls below zero.
 	public void takeDamage(int damage)
-    {
+	{
 		health -= damage;
 		healthText.SetText(health.ToString());
 		if (health <= 0)
@@ -66,21 +69,12 @@ public class Player : MonoBehaviour
 	}
 
 	public void freeze()
-    {
+	{
 		frozen = true;
-    }
+	}
 
 	public void unfreeze()
 	{
 		frozen = false;
 	}
-
-    public void upgradeSpeed(){
-        speed += 0.01f;
-    }
-
-    public void upgradeHealth(){
-        health += 1;
-        healthText.SetText(health.ToString());
-    }
 }

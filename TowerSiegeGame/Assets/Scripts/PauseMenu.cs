@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-	public static bool isPaused = false;
-	public GameObject pauseMenuUI;
-	public GameObject pauseIcon;
+    public static bool isPaused = false;
+    public GameObject pauseMenuUI;
+    public GameObject pauseIcon;
 
     private GameObject player;
 
@@ -19,29 +19,33 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
-        	if(isPaused) Resume();
-        	else Pause();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused) Resume();
+            else Pause();
         }
     }
 
-    public void Resume() {
-    	pauseMenuUI.SetActive(false);
-    	Time.timeScale = 1f;
-    	isPaused = false;
-    	pauseIcon.SetActive(true);
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        pauseIcon.SetActive(true);
         player.GetComponent<Player>().unfreeze();
     }
 
-    public void Pause() {
-    	pauseMenuUI.SetActive(true);
-    	Time.timeScale = 0f;
-    	isPaused = true;
-    	pauseIcon.SetActive(false);
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+        pauseIcon.SetActive(false);
         player.GetComponent<Player>().freeze();
     }
 
-    public void Quit() {
-    	SceneManager.LoadScene("TitleScreen");
+    public void Quit()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2543798099501572109}
   - component: {fileID: 6795407604761409963}
   m_Layer: 0
-  m_Name: knightHealthText
+  m_Name: KnightHealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: 7554320845016625331}
   m_Layer: 0
-  m_Name: knight
+  m_Name: Knight
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -325,7 +325,6 @@ MonoBehaviour:
   speed: 3
   damage: 3
   cost: 300
-  healthText: {fileID: 0}
 --- !u!95 &7554320845016625331
 Animator:
   serializedVersion: 3

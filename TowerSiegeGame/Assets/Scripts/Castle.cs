@@ -20,7 +20,7 @@ public class Castle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Take damage and deactivate if health falls below zero.

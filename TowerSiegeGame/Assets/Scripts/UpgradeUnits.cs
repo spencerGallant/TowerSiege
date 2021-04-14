@@ -8,6 +8,7 @@ using TMPro;
 
 public class UpgradeUnits : MonoBehaviour
 {
+    /*
     public Text unitCountText;
     public static GameObject currentUnitType;
     public List<GameObject> units = new List<GameObject>();
@@ -32,7 +33,6 @@ public class UpgradeUnits : MonoBehaviour
     public GameObject spawnPoint;
     public float interval;
     public int spawnIndex;
-    // public int cost;
 
     private int unitCount;
     private bool spawning;
@@ -72,20 +72,13 @@ public class UpgradeUnits : MonoBehaviour
 
     public void UpgradePlayer() {
         int unitCost = currentUnitType.GetComponent<Unit>().cost;
-        bool unitBought = startRound.GetComponent<StartRound>().buyUnit(unitCost);
+        bool unitBought = startRound.GetComponent<RoundTimer>().buyUnit(unitCost);
         if (unitBought)
         {
             units.Add(currentUnitType);
             queueButton.GetComponent<QueueUnit>().Queue();
         }
     }
-
-    /*
-    public int getCost()
-    {
-        return cost;
-    }
-    */
 
     public void UpgradeVassal() {
         currentUnitType = vassal;
@@ -163,4 +156,5 @@ public class UpgradeUnits : MonoBehaviour
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.green;
     }
+    */
 }
