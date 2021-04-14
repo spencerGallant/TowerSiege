@@ -15,7 +15,7 @@ public class SpawnUnits : MonoBehaviour
     public GameObject vassal;
     public GameObject knight;
     public GameObject mercenary;
-    public GameObject footLancer;
+    public GameObject lancer;
     public GameObject footArcher;
     public GameObject artisan;
     public GameObject peasant;
@@ -23,11 +23,11 @@ public class SpawnUnits : MonoBehaviour
     public Button vassalButton;
     public Button knightButton;
     public Button mercenaryButton;
-    public Button footLancerButton;
+    public Button lancerButton;
     public Button archerButton;
     public Button artisanButton;
     public Button peasantButton;
-    
+
     public GameObject spawnPoint;
     public float interval;
     public int spawnIndex;
@@ -61,7 +61,7 @@ public class SpawnUnits : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
-            } 
+            }
             else
             {
                 GameObject unitClone = Instantiate(units[0], spawnPoint.transform.position, Quaternion.identity);
@@ -109,7 +109,7 @@ public class SpawnUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.green;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -120,7 +120,7 @@ public class SpawnUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.green;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -131,18 +131,18 @@ public class SpawnUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.green;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
     }
 
-    public void SpawnFootLancer() {
-        currentUnitType = footLancer;
+    public void Spawnlancer() {
+        currentUnitType = lancer;
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.green;
+        lancerButton.GetComponent<Image>().color = Color.green;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -153,7 +153,7 @@ public class SpawnUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.green;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -164,7 +164,7 @@ public class SpawnUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.green;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -175,7 +175,7 @@ public class SpawnUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.green;

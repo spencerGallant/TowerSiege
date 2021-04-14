@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: 5607600897414566271}
   m_Layer: 0
-  m_Name: footLancer
+  m_Name: lancer
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,10 +321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7660ccf1940e8e41b70e4a1acb99d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   speed: 5
   damage: 2
   cost: 200
+  healthText: {fileID: 0}
 --- !u!95 &5607600897414566271
 Animator:
   serializedVersion: 3

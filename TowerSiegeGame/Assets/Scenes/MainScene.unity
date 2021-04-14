@@ -807,7 +807,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ARTISANS UPGRADE
+  m_text: 'UPGRADE
+
+    YOUR HEALTH'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1265,7 +1267,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FOOT LANCER
+  m_text: LANCERS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2477,6 +2479,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1718999851}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &447877349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3365426388974925270, guid: c26b8a8f6692171408d262afdc546d6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1718999851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447877348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8aed31b4342b467aa79ab835b4c3000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &447877354
 Animator:
   serializedVersion: 3
@@ -2827,7 +2841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: KNIGHTS UPGRADE
+  m_text: ??
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3365,7 +3379,7 @@ GameObject:
   - component: {fileID: 698367263}
   - component: {fileID: 698367262}
   m_Layer: 0
-  m_Name: UpgradeArcher
+  m_Name: UpgradeUnitSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3433,18 +3447,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 698367263}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1509185419}
-        m_MethodName: SpawnArcher
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &698367263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4662,7 +4665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VASSALS UPGRADE
+  m_text: ??
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5437,6 +5440,17 @@ PrefabInstance:
       propertyPath: queueButton
       value: 
       objectReference: {fileID: 1978685060}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: lancer
+      value: 
+      objectReference: {fileID: 5573906633641542603, guid: 0b8af5296e1604c83bc4e24fb47a7042,
+        type: 3}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: lancerButton
+      value: 
+      objectReference: {fileID: 1050121994}
     - target: {fileID: 4150039142557414578, guid: 667acb2783a077f4f93c7d67e497d228,
         type: 3}
       propertyPath: m_Name
@@ -5709,7 +5723,7 @@ GameObject:
   - component: {fileID: 953459455}
   - component: {fileID: 953459454}
   m_Layer: 0
-  m_Name: UpgradeLancer
+  m_Name: UpgradeUnitHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5777,18 +5791,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 953459455}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1509185419}
-        m_MethodName: SpawnFootLancer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &953459455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6400,8 +6403,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 447877348}
-        m_MethodName: 
+      - m_Target: {fileID: 447877349}
+        m_MethodName: upgradeSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6597,7 +6600,7 @@ GameObject:
   - component: {fileID: 1050121995}
   - component: {fileID: 1050121994}
   m_Layer: 0
-  m_Name: SetFootLancer
+  m_Name: SetLancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6667,7 +6670,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1509185419}
-        m_MethodName: SpawnFootLancer
+        m_MethodName: Spawnlancer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13702,7 +13705,7 @@ GameObject:
   - component: {fileID: 1149072647}
   - component: {fileID: 1149072646}
   m_Layer: 0
-  m_Name: UpgradeMercenary
+  m_Name: UpgradeUnitDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13770,18 +13773,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1149072647}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1509185419}
-        m_MethodName: SpawnMercenary
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1149072647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14148,7 +14140,7 @@ GameObject:
   - component: {fileID: 1224379628}
   - component: {fileID: 1224379627}
   m_Layer: 0
-  m_Name: UpgradeKnights
+  m_Name: ??
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14216,18 +14208,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1224379628}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1509185419}
-        m_MethodName: SpawnKnight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1224379628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14278,7 +14259,7 @@ GameObject:
   - component: {fileID: 1231339776}
   - component: {fileID: 1231339775}
   m_Layer: 0
-  m_Name: UpgradeVassals
+  m_Name: ??
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14346,18 +14327,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1231339776}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1509185419}
-        m_MethodName: SpawnVassal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1231339776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14781,8 +14751,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1366459460}
-        m_MethodName: startTimer
+      - m_Target: {fileID: 1612868706}
+        m_MethodName: ChangeMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14885,7 +14855,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ARCHERS UPGRADE
+  m_text: 'UPGRADE UNIT SPEED
+
+    (not yet)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15130,8 +15102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178245a01d1394a25b2a4c96cc19fa76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 100
-  income: 10
+  gold: 1000
+  income: 100
 --- !u!1 &1371554990
 GameObject:
   m_ObjectHideFlags: 0
@@ -15188,7 +15160,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FOOT LANCER UPGRADE
+  m_text: UPGRADE UNIT HEALTH (not yet)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15577,7 +15549,7 @@ GameObject:
   - component: {fileID: 1404415285}
   - component: {fileID: 1404415284}
   m_Layer: 0
-  m_Name: UpgradeArtisan
+  m_Name: UpgradePlayerHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15646,8 +15618,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1509185419}
-        m_MethodName: SpawnArtisan
+      - m_Target: {fileID: 447877349}
+        m_MethodName: upgradeHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16198,7 +16170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MERCENARY
+  m_text: MERCENARIES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16464,6 +16436,17 @@ PrefabInstance:
       propertyPath: queueButton
       value: 
       objectReference: {fileID: 550525307}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: lancer
+      value: 
+      objectReference: {fileID: 5573906633641542603, guid: 0b8af5296e1604c83bc4e24fb47a7042,
+        type: 3}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: lancerButton
+      value: 
+      objectReference: {fileID: 1050121994}
     - target: {fileID: 4150039142557414578, guid: 667acb2783a077f4f93c7d67e497d228,
         type: 3}
       propertyPath: m_Name
@@ -16952,7 +16935,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: UPGRADE YOUR SPEED
+  m_text: 'UPGRADE
+
+    YOUR SPEED'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17177,13 +17162,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1612868705}
+  - component: {fileID: 1612868706}
+  - component: {fileID: 1612868707}
   m_Layer: 0
   m_Name: UpgradeShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1612868705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17205,6 +17192,56 @@ RectTransform:
   m_AnchoredPosition: {x: -300.00003, y: -235.00003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1612868706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612868704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c56c42ec66b5475ca9e19ccc41c25c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeMenuUI: {fileID: 970119572}
+  unitMenuUI: {fileID: 266128991}
+--- !u!114 &1612868707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612868704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528d53da19153485fa12691bd9e28845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitCountText: {fileID: 0}
+  units: []
+  player: {fileID: 933054599605608352, guid: c26b8a8f6692171408d262afdc546d6d, type: 3}
+  vassal: {fileID: 5573906633641542603, guid: f6ba0cf869fba4f9a8434d6935bd8464, type: 3}
+  knight: {fileID: 5573906633641542603, guid: b459d919a55844bc3b2ef07e9ee7e23f, type: 3}
+  mercenary: {fileID: 5573906633641542603, guid: dcc60d213a2e44b85900ef7573c954ae,
+    type: 3}
+  lancer: {fileID: 5573906633641542603, guid: 0b8af5296e1604c83bc4e24fb47a7042, type: 3}
+  footArcher: {fileID: 4881600605423940039, guid: 4f856da10a9784a9c982176c71537321,
+    type: 3}
+  artisan: {fileID: 5573906633641542603, guid: 425d5b69890b64a1faa97b00046f999d, type: 3}
+  peasant: {fileID: 5573906633641542603, guid: 8b8aa9bde82224aba82d524914520ba4, type: 3}
+  vassalButton: {fileID: 0}
+  knightButton: {fileID: 0}
+  mercenaryButton: {fileID: 0}
+  lancerButton: {fileID: 0}
+  archerButton: {fileID: 0}
+  artisanButton: {fileID: 0}
+  peasantButton: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  interval: 0
+  spawnIndex: 0
+  startRound: {fileID: 0}
+  queueButton: {fileID: 0}
 --- !u!1001 &1621013306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17739,6 +17776,17 @@ PrefabInstance:
       propertyPath: queueButton
       value: 
       objectReference: {fileID: 493238121}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: lancer
+      value: 
+      objectReference: {fileID: 5573906633641542603, guid: 0b8af5296e1604c83bc4e24fb47a7042,
+        type: 3}
+    - target: {fileID: 601869154234875283, guid: 667acb2783a077f4f93c7d67e497d228,
+        type: 3}
+      propertyPath: lancerButton
+      value: 
+      objectReference: {fileID: 1050121994}
     - target: {fileID: 4150039142557414578, guid: 667acb2783a077f4f93c7d67e497d228,
         type: 3}
       propertyPath: m_Name
@@ -18274,7 +18322,7 @@ PrefabInstance:
     - target: {fileID: 3365426388974925270, guid: c26b8a8f6692171408d262afdc546d6d,
         type: 3}
       propertyPath: health
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4368789473172277316, guid: c26b8a8f6692171408d262afdc546d6d,
         type: 3}
@@ -18284,12 +18332,12 @@ PrefabInstance:
     - target: {fileID: 4877245646292256862, guid: c26b8a8f6692171408d262afdc546d6d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.62
+      value: -9.01
       objectReference: {fileID: 0}
     - target: {fileID: 4877245646292256862, guid: c26b8a8f6692171408d262afdc546d6d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.18
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 4877245646292256862, guid: c26b8a8f6692171408d262afdc546d6d,
         type: 3}
@@ -18768,7 +18816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MERCENARY UPGRADE
+  m_text: UPGRADE UNIT DAMAGE (not yet)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18881,7 +18929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0.000045776367}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782655586
@@ -18927,15 +18975,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 970119574}
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 1612868706}
+        m_MethodName: ChangeMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: d
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1366459453}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1782655587

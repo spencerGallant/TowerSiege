@@ -5,43 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class UpgradeMenu : MonoBehaviour
 {
-	public static bool isPaused = false;
-	public GameObject pauseMenuUI;
-	public GameObject pauseIcon;
-
-    private GameObject player;
+	public static bool isActive = false;
+	public GameObject upgradeMenuUI;
+    public GameObject unitMenuUI;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
-        	if(isPaused) Resume();
-        	else Pause();
+
+    }
+
+    public void ChangeMenu() {
+        if (isActive) {
+            unitMenuUI.SetActive(true);
+            upgradeMenuUI.SetActive(false);
+            isActive = false;
+        } else {
+            upgradeMenuUI.SetActive(true);
+            unitMenuUI.SetActive(false);
+            isActive = true;
         }
     }
 
-    public void Resume() {
-    	pauseMenuUI.SetActive(false);
-    	Time.timeScale = 1f;
-    	isPaused = false;
-    	pauseIcon.SetActive(true);
-        player.GetComponent<Player>().unfreeze();
-    }
-
-    public void Pause() {
-    	pauseMenuUI.SetActive(true);
-    	Time.timeScale = 0f;
-    	isPaused = true;
-    	pauseIcon.SetActive(false);
-        player.GetComponent<Player>().freeze();
-    }
-
-    public void Quit() {
-    	SceneManager.LoadScene("TitleScreen");
-    }
 }

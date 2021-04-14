@@ -16,7 +16,7 @@ public class UpgradeUnits : MonoBehaviour
     public GameObject vassal;
     public GameObject knight;
     public GameObject mercenary;
-    public GameObject footLancer;
+    public GameObject lancer;
     public GameObject footArcher;
     public GameObject artisan;
     public GameObject peasant;
@@ -24,7 +24,7 @@ public class UpgradeUnits : MonoBehaviour
     public Button vassalButton;
     public Button knightButton;
     public Button mercenaryButton;
-    public Button footLancerButton;
+    public Button lancerButton;
     public Button archerButton;
     public Button artisanButton;
     public Button peasantButton;
@@ -46,6 +46,7 @@ public class UpgradeUnits : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        // units = GameObject.FindGameObjectWithTag("Unit");
     }
 
     // Update is called once per frame
@@ -53,6 +54,21 @@ public class UpgradeUnits : MonoBehaviour
     {
 
     }
+
+    // public void upgradeSpeed()
+    // {
+    //     speed += 0.01f;
+    // }
+    //
+    // public void upgradeHealth()
+    // {
+    //     health += 1;
+    // }
+    //
+    // public void upgradeDamage()
+    // {
+    //     damage += 1;
+    // }
 
     public void UpgradePlayer() {
         int unitCost = currentUnitType.GetComponent<Unit>().cost;
@@ -76,7 +92,7 @@ public class UpgradeUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.green;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -87,7 +103,7 @@ public class UpgradeUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.green;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -98,18 +114,18 @@ public class UpgradeUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.green;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
     }
 
-    public void UpgradeFootLancer() {
-        currentUnitType = footLancer;
+    public void Upgradelancer() {
+        currentUnitType = lancer;
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.green;
+        lancerButton.GetComponent<Image>().color = Color.green;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -120,7 +136,7 @@ public class UpgradeUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.green;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -131,7 +147,7 @@ public class UpgradeUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.green;
         peasantButton.GetComponent<Image>().color = Color.white;
@@ -142,7 +158,7 @@ public class UpgradeUnits : MonoBehaviour
         vassalButton.GetComponent<Image>().color = Color.white;
         knightButton.GetComponent<Image>().color = Color.white;
         mercenaryButton.GetComponent<Image>().color = Color.white;
-        footLancerButton.GetComponent<Image>().color = Color.white;
+        lancerButton.GetComponent<Image>().color = Color.white;
         archerButton.GetComponent<Image>().color = Color.white;
         artisanButton.GetComponent<Image>().color = Color.white;
         peasantButton.GetComponent<Image>().color = Color.green;

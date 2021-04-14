@@ -10,7 +10,7 @@ public class Unit : MonoBehaviour
     public int damage;
     public int cost;
 
-    private TextMeshPro healthText;
+    public TextMeshPro healthText;
     private int spawnIndex;
     private Vector2[] waypoints;
     private int numWaypoints;
@@ -39,7 +39,7 @@ public class Unit : MonoBehaviour
     void Update()
     {
         // Destroy the unit if it has reached its last waypoint.
-        if (waypointIndex == numWaypoints) 
+        if (waypointIndex == numWaypoints)
         {
             Destroy(gameObject);
             return;
@@ -81,5 +81,21 @@ public class Unit : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void upgradeSpeed()
+    {
+        speed += 0.01f;
+    }
+
+    public void upgradeHealth()
+    {
+        health += 1;
+        healthText.SetText(health.ToString());
+    }
+
+    public void upgradeDamage()
+    {
+        damage += 1;
     }
 }

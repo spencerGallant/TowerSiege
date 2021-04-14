@@ -74,4 +74,13 @@ public class Player : MonoBehaviour
 	{
 		frozen = false;
 	}
+
+    public void upgradeSpeed(){
+        speed += 0.01f;
+    }
+
+    public void upgradeHealth(){
+        health += 1;
+        healthText.SetText(health.ToString());
+    }
 }

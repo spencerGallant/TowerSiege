@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4150039143557101146}
   - component: {fileID: 601869154234875283}
   m_Layer: 0
-  m_Name: spawn
+  m_Name: spawnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,6 +222,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitCountText: {fileID: 0}
+  units: []
+  vassal: {fileID: 5573906633641542603, guid: f6ba0cf869fba4f9a8434d6935bd8464, type: 3}
+  knight: {fileID: 5573906633641542603, guid: b459d919a55844bc3b2ef07e9ee7e23f, type: 3}
+  mercenary: {fileID: 5573906633641542603, guid: dcc60d213a2e44b85900ef7573c954ae,
+    type: 3}
+  lancer: {fileID: 5573906633641542603, guid: 0b8af5296e1604c83bc4e24fb47a7042, type: 3}
+  footArcher: {fileID: 4881600605423940039, guid: 4f856da10a9784a9c982176c71537321,
+    type: 3}
+  artisan: {fileID: 5573906633641542603, guid: 425d5b69890b64a1faa97b00046f999d, type: 3}
+  peasant: {fileID: 5573906633641542603, guid: 8b8aa9bde82224aba82d524914520ba4, type: 3}
+  vassalButton: {fileID: 0}
+  knightButton: {fileID: 0}
+  mercenaryButton: {fileID: 0}
+  lancerButton: {fileID: 0}
+  archerButton: {fileID: 0}
+  artisanButton: {fileID: 0}
+  peasantButton: {fileID: 0}
+  spawnPoint: {fileID: 0}
   interval: 1
-  unit: {fileID: 0}
-  spawn: {fileID: 0}
+  spawnIndex: 0
+  startRound: {fileID: 0}
+  queueButton: {fileID: 0}
