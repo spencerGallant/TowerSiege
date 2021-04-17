@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6868567826929261397}
   - component: {fileID: 1313116555061010301}
   - component: {fileID: 1746888100665825593}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FootArcher
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 2905458520892700879}
   - component: {fileID: 4765842200615641244}
   - component: {fileID: 2680735921833628151}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArcherHealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
