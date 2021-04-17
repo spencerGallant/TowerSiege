@@ -68,11 +68,13 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	// Disable movement.
 	public void Freeze()
 	{
 		frozen = true;
 	}
 
+	// Enable movement.
 	public void Unfreeze()
 	{
 		frozen = false;

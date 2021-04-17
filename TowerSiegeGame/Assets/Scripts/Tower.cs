@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+using TMPro;
 
 public class Tower : MonoBehaviour
 {
@@ -13,11 +13,16 @@ public class Tower : MonoBehaviour
     private float timeRemaining;
     private GameObject[] units;
     private Vector3 targetPos;
+    private TextMeshPro healthText;
 
     // Start is called before the first frame update
     void Start()
     {
+        healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
+        healthText.SetText(health.ToString());
+
         DrawCircle();
+
         timeRemaining = interval;
     }
 
@@ -46,6 +51,7 @@ public class Tower : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        healthText.SetText(health.ToString());
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -105,5 +111,11 @@ public class Tower : MonoBehaviour
             Vector3 initialRelativePosition = new Vector3(0, range, 0);
             line.SetPosition(i, transform.position + rotationMatrix.MultiplyPoint(initialRelativePosition));
         }
+    }
+
+    // Set the health text.
+    private void SetHealthText()
+    {
+
     }
 }

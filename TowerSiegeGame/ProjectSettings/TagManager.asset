@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Unit
   - Castle
+  - Tower
   layers:
   - Default
   - TransparentFX

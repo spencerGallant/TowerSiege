@@ -185,6 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 146344623013270581}
   - component: {fileID: 6615282085189308200}
+  - component: {fileID: -7448973454775400532}
   - component: {fileID: 2724756837376790277}
   - component: {fileID: 1978991333799170204}
   - component: {fileID: -7426921814964593403}
@@ -261,6 +262,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-7448973454775400532
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573906633641542603}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &2724756837376790277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -303,6 +325,7 @@ MonoBehaviour:
   speed: 2
   damage: 1
   cost: 150
+  attackFreq: 1
 --- !u!95 &-7426921814964593403
 Animator:
   serializedVersion: 3

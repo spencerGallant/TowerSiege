@@ -325,6 +325,7 @@ MonoBehaviour:
   speed: 4
   damage: 5
   cost: 300
+  attackFreq: 1
 --- !u!95 &745251092665369281
 Animator:
   serializedVersion: 3

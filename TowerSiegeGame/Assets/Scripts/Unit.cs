@@ -15,15 +15,14 @@ public class Unit : MonoBehaviour
     public float speed;
     public int damage;
     public int cost;
+    public float attackFreq;
 
     private TextMeshPro healthText;
     private Vector2[] waypoints;
     private int spawnIndex;
     private int numWaypoints;
     private int waypointIndex;
-    private float attackFreq;
     private float attackTimer;
-    private bool attacking;
 
     // Start is called before the first frame update
     void Start()
@@ -43,9 +42,7 @@ public class Unit : MonoBehaviour
         healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
         healthText.SetText(health.ToString());
 
-        attackFreq = 1.0f;
         attackTimer = attackFreq;
-        attacking = false;
     }
 
     // Update is called once per frame
@@ -86,22 +83,20 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // Inflict damage.
-    private void OnTriggerStay2D(Collider2D collision)
+    // Inflict damage when touching a tower or the castle.
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        attacking = true;
-        Debug.Log("ontriggerstay");
         if (attackTimer > 0)
         {
             attackTimer -= Time.deltaTime;
         }
         else
         {
-            if (collision.CompareTag("Castle"))
+            if (collision.gameObject.tag == "Castle")
             {
                 collision.gameObject.GetComponent<Castle>().TakeDamage(damage);
             }
-            if (collision.CompareTag("Tower"))
+            if (collision.gameObject.tag == "Tower")
             {
                 collision.gameObject.GetComponent<Tower>().TakeDamage(damage);
             }
