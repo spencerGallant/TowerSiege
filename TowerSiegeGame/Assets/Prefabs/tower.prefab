@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3463136548065227449}
   - component: {fileID: 532790202361028364}
   - component: {fileID: 8289145156800941368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerHealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 4730760154506453630}
   - component: {fileID: 654683516473024783}
   - component: {fileID: 4730760154506453625}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tower
   m_TagString: Tower
   m_Icon: {fileID: 0}
