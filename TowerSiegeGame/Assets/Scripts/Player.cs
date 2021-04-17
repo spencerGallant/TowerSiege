@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 	}
 
 	// Take damage and deactivate if health falls below zero.
-	public void takeDamage(int damage)
+	public void TakeDamage(int damage)
 	{
 		health -= damage;
 		healthText.SetText(health.ToString());
@@ -68,12 +68,12 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	public void freeze()
+	public void Freeze()
 	{
 		frozen = true;
 	}
 
-	public void unfreeze()
+	public void Unfreeze()
 	{
 		frozen = false;
 	}

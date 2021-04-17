@@ -21,6 +21,9 @@ public class Unit : MonoBehaviour
     private int spawnIndex;
     private int numWaypoints;
     private int waypointIndex;
+    private float attackFreq;
+    private float attackTimer;
+    private bool attacking;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,10 @@ public class Unit : MonoBehaviour
         // Set the health text.
         healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
         healthText.SetText(health.ToString());
+
+        attackFreq = 1.0f;
+        attackTimer = attackFreq;
+        attacking = false;
     }
 
     // Update is called once per frame
@@ -63,13 +70,13 @@ public class Unit : MonoBehaviour
     }
 
     // Set the spawn index to determine which waypoints the unit follows.
-    public void setSpawnIndex(int index)
+    public void SetSpawnIndex(int index)
     {
         spawnIndex = index;
     }
 
     // Decrease the health of the unit and destroy if its health reaches or goes below zero.
-    public void takeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
         healthText.SetText(health.ToString());
@@ -79,13 +86,26 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // Damage the castle and destroy unit on collision.
-    private void OnTriggerEnter2D(Collider2D collision)
+    // Inflict damage.
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Castle"))
+        attacking = true;
+        Debug.Log("ontriggerstay");
+        if (attackTimer > 0)
         {
-            collision.gameObject.GetComponent<Castle>().takeDamage(damage);
-            Destroy(gameObject);
+            attackTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (collision.CompareTag("Castle"))
+            {
+                collision.gameObject.GetComponent<Castle>().TakeDamage(damage);
+            }
+            if (collision.CompareTag("Tower"))
+            {
+                collision.gameObject.GetComponent<Tower>().TakeDamage(damage);
+            }
+            attackTimer = attackFreq;
         }
     }
 }

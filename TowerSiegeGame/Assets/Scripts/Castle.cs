@@ -24,7 +24,7 @@ public class Castle : MonoBehaviour
     }
 
     // Take damage and deactivate if health falls below zero.
-    public void takeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
         healthText.SetText(health.ToString());

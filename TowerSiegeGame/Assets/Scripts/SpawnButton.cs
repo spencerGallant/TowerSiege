@@ -42,7 +42,7 @@ public class SpawnButton : MonoBehaviour
             {
                 GameObject unit = gameController.GetComponent<UnitQueues>().Dequeue(buttonIndex);
                 GameObject unitClone = Instantiate(unit, spawnPoint.transform.position, Quaternion.identity);
-                unitClone.GetComponent<Unit>().setSpawnIndex(buttonIndex);
+                unitClone.GetComponent<Unit>().SetSpawnIndex(buttonIndex);
                 timeRemaining = interval;
             }
         }

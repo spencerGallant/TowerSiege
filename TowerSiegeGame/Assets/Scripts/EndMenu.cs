@@ -52,7 +52,7 @@ public class EndMenu : MonoBehaviour
     {
         reloading = true;
         Time.timeScale = 1f;
-        player.GetComponent<Player>().unfreeze();
+        player.GetComponent<Player>().Unfreeze();
         SceneManager.LoadSceneAsync("MainScene");
     }
 
@@ -72,7 +72,7 @@ public class EndMenu : MonoBehaviour
         if (!reloading)
         {
             Time.timeScale = 0f;
-            player.GetComponent<Player>().freeze();
+            player.GetComponent<Player>().Freeze();
         }
         endMenu.SetActive(true);
         endText.GetComponent<TextMeshProUGUI>().SetText(endMessage);

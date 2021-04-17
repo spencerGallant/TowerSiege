@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         pauseIcon.SetActive(true);
-        player.GetComponent<Player>().unfreeze();
+        player.GetComponent<Player>().Unfreeze();
     }
 
     public void Pause()
@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         pauseIcon.SetActive(false);
-        player.GetComponent<Player>().freeze();
+        player.GetComponent<Player>().Freeze();
     }
 
     public void Quit()
