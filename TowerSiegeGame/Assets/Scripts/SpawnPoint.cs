@@ -13,14 +13,14 @@ public class SpawnPoint : MonoBehaviour
     public float interval;
 
     private GameObject gameController;
-    private float timeRemaining;
+    private float spawnTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController");
 
-        timeRemaining = interval;
+        spawnTimer = interval;
     }
 
     // Update is called once per frame
@@ -30,16 +30,16 @@ public class SpawnPoint : MonoBehaviour
         bool roundStarted = gameController.GetComponent<RoundTimer>().RoundStarted();
         if (roundStarted && !queueEmpty)
         {
-            if (timeRemaining > 0)
+            if (spawnTimer > 0)
             {
-                timeRemaining -= Time.deltaTime;
+                spawnTimer -= Time.deltaTime;
             }
             else
             {
                 GameObject unit = gameController.GetComponent<UnitQueues>().Dequeue(spawnIndex);
                 GameObject unitClone = Instantiate(unit, transform.position, Quaternion.identity);
                 unitClone.GetComponent<Unit>().SetSpawnIndex(spawnIndex);
-                timeRemaining = interval;
+                spawnTimer = interval;
             }
         }
     }

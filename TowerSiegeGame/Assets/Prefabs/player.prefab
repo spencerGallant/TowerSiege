@@ -148,6 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 0.05
+  debuffCooldown: 10
+  debuffRange: 4
+  debuffDuration: 10
 --- !u!95 &-3091451380520915788
 Animator:
   serializedVersion: 3

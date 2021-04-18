@@ -13,39 +13,56 @@ public class Tower : MonoBehaviour
     private TextMeshPro healthText;
     private GameObject[] units;
     private GameObject target;
-    private float timeRemaining;
+    private float shootTimer;
+    private float debuffTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
 
+        shootTimer = interval;
+        debuffTimer = 0f;
+
         healthText.SetText(health.ToString());
         DrawCircle();
-        timeRemaining = interval;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Shoot the closest unit in range.
         units = GameObject.FindGameObjectsWithTag("Unit");
         if (units.Length == 0 || !InRange(ClosestUnit()))
         {
-            timeRemaining = interval;
+            shootTimer = interval;
         } 
-        else if (timeRemaining > 0)
+        else if (shootTimer > 0)
         {
-            if (target == null)
+            if (target == null || !InRange(target))
             {
                 target = ClosestUnit();
             }
-            timeRemaining -= Time.deltaTime;
+            shootTimer -= Time.deltaTime;
         } 
         else
         {
             GameObject projectileClone = Instantiate(projectile, transform.position, Quaternion.identity);
             projectileClone.GetComponent<Projectile>().setTarget(target.transform.position);
-            timeRemaining = interval;
+            shootTimer = interval;
+        }
+
+        // Recieve a debuff.
+        if (debuffTimer > 0)
+        {
+            Debug.Log("debuffed");
+            debuffTimer -= Time.deltaTime;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            if (debuffTimer <= 0)
+            {
+                interval /= 2;
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
 
@@ -58,6 +75,13 @@ public class Tower : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    // Slow the rate of fire.
+    public void SlowShooting(float duration)
+    {
+        interval *= 2;
+        debuffTimer = duration;
     }
 
     // Returns the closest unit to the tower (returns a null reference if no units are present).
