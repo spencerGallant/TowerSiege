@@ -6,26 +6,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class RoundTimer : MonoBehaviour
 {
     public int time;
-    // public int incomeTime;
 
     private TextMeshProUGUI timerText;
+    private GameObject startRoundButton;
     private bool timerStarted;
     private float timeLeft;
-    // private float incomeTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         timerText = GameObject.Find("Canvas/TimerText").GetComponent<TextMeshProUGUI>();
+        startRoundButton = GameObject.Find("Canvas/SelectionMenu/SoldierBar/StartRoundButton");
 
         timerStarted = false;
         timeLeft = time;
-        // incomeTimer = time;
         SetTimerText();
     }
 
@@ -44,14 +44,6 @@ public class RoundTimer : MonoBehaviour
                 timerStarted = false;
             }
             SetTimerText();
-
-            /*
-            if (timeLeft < incomeTimer)
-            {
-                incomeTimer -= incomeTime;
-                gameObject.GetComponent<Money>().GiveIncome();
-            }
-            */
         }
     }
 
@@ -59,6 +51,8 @@ public class RoundTimer : MonoBehaviour
     public void StartTimer()
     {
         timerStarted = true;
+        startRoundButton.GetComponent<Image>().color = Color.green;
+        timerText.color = Color.yellow;
     }
 
     public bool RoundStarted()

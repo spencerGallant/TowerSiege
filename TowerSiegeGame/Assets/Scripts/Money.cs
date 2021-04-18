@@ -11,7 +11,6 @@ using TMPro;
 public class Money : MonoBehaviour
 {
     public int money;
-    // public int income;
 
     private TextMeshProUGUI moneyText;
 
@@ -28,7 +27,7 @@ public class Money : MonoBehaviour
         moneyText.SetText("Money: " + money);
     }
 
-    // Check if the player can afford purchasing the unit.
+    // Check if the player can afford purchasing a unit.
     public bool CanAfford(GameObject unit)
     {
         if (unit.GetComponent<Unit>().cost > money)
@@ -38,14 +37,6 @@ public class Money : MonoBehaviour
 
         return true;
     }
-
-    /*
-    // Increment money by the income amount.
-    public void GiveIncome()
-    {
-        money += income;
-    }
-    */
 
     // Decrement money by the unit cost.
     public void DeductFunds(GameObject unit)

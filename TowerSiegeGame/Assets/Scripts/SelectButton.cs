@@ -13,19 +13,25 @@ public class SelectButton : MonoBehaviour
     public GameObject unit;
 
     private GameObject gameController;
+    private GameObject startRoundButton;
     private Image[] allButtons;
 
     // Start is called before the first frame update
     void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController");
+        startRoundButton = transform.parent.Find("StartRoundButton").gameObject;
         allButtons = transform.parent.GetComponentsInChildren<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Grey out button if unit is too expensive.
+        if (!gameController.GetComponent<Money>().CanAfford(unit))
+        {
+            gameObject.GetComponent<Image>().color = Color.gray;
+        }
     }
 
     // On-click: Set the selected unit in UnitQueues and update the button colors.
@@ -35,7 +41,8 @@ public class SelectButton : MonoBehaviour
 
         foreach (Image image in allButtons)
         {
-            if (image.gameObject == transform.parent.gameObject)
+            // Do not modify the soldier bar or start round button.
+            if (image.gameObject == transform.parent.gameObject || image.gameObject == startRoundButton)
             {
                 continue;
             }
