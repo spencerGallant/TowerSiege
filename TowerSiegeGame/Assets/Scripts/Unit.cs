@@ -40,7 +40,7 @@ public class Unit : MonoBehaviour
 
         // Set the health text.
         healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
-        healthText.SetText(health.ToString());
+        SetHealthText();
 
         attackTimer = attackFreq;
     }
@@ -76,11 +76,25 @@ public class Unit : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthText.SetText(health.ToString());
+        SetHealthText();
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    // Increase the unit health.
+    public void IncreaseHealth()
+    {
+        health *= 2;
+        SetHealthText();
+        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+    }
+
+    // Set the health text.
+    private void SetHealthText()
+    {
+        healthText.SetText(health.ToString());
     }
 
     // Inflict damage when touching a tower or the castle.

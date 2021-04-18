@@ -7,16 +7,19 @@ public class Player : MonoBehaviour
 {
 	public int health;
 	public float speed;
+	public float buffCooldown;
+	public float buffRange;
 	public float debuffCooldown;
 	public float debuffRange;
 	public float debuffDuration;
 
 	private GameObject gameController;
-	private GameObject[] towers;
 	private TextMeshPro healthText;
+	private float buffTimer;
 	private float debuffTimer;
-	private bool frozen;
+	private bool buffReady;
 	private bool debuffReady;
+	private bool frozen;
 
 	// Start is called before the first frame update
 	void Start()
@@ -24,7 +27,9 @@ public class Player : MonoBehaviour
 		gameController = GameObject.FindGameObjectWithTag("GameController");
 
 		frozen = false;
+		buffReady = true;
 		debuffReady = true;
+		buffTimer = 0f;
 		debuffTimer = 0f;
 
 		// Set the health text.
@@ -63,6 +68,24 @@ public class Player : MonoBehaviour
 				this.transform.position = position;
 			}
 
+			// Buff cooldown.
+			if (!buffReady)
+			{
+				if (buffTimer <= 0)
+				{
+					buffTimer = buffCooldown;
+				}
+				else
+				{
+					buffTimer -= Time.deltaTime;
+					if (buffTimer <= 0)
+					{
+						buffReady = true;
+						Debug.Log("buff ready");
+					}
+				}
+			}
+
 			// Debuff cooldown.
 			if (!debuffReady)
             {
@@ -80,6 +103,16 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+
+			// Use buff.
+			if (Input.GetKey(KeyCode.Alpha2))
+			{
+				if (buffReady)
+				{
+					Buff();
+					buffReady = false;
+				}
+			}
 
 			// Use debuff.
 			if (Input.GetKey(KeyCode.Alpha1))
@@ -116,11 +149,37 @@ public class Player : MonoBehaviour
 		frozen = false;
 	}
 
-	// Use the player ability.
+	// Check if the game object is within range.
+	private bool InRange(GameObject obj, float range)
+	{
+		Vector3 difference = obj.transform.position - transform.position;
+		float distSqr = difference.sqrMagnitude;
+		if (distSqr > range * range)
+		{
+			return false;
+		}
+		return true;
+	}
+
+	// Use the player buff ability.
+	private void Buff()
+	{
+		Debug.Log("buff used");
+		GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
+		foreach (GameObject unit in units)
+		{
+			if (InRange(unit, buffRange))
+			{
+				unit.GetComponent<Unit>().IncreaseHealth();
+			}
+		}
+	}
+
+	// Use the player debuff ability.
 	private void Debuff()
     {
 		Debug.Log("debuff used");
-		towers = GameObject.FindGameObjectsWithTag("Tower");
+		GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
 		foreach (GameObject tower in towers)
         {
 			if (InRange(tower, debuffRange))
@@ -128,17 +187,5 @@ public class Player : MonoBehaviour
 				tower.GetComponent<Tower>().SlowShooting(debuffDuration);
             }
         }
-    }
-
-	// Check if the game object is within range.
-	private bool InRange(GameObject obj, float range)
-    {
-		Vector3 difference = obj.transform.position - transform.position;
-		float distSqr = difference.sqrMagnitude;
-		if (distSqr > range * range)
-        {
-			return false;
-        }
-		return true;
     }
 }
