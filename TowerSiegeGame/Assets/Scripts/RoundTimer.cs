@@ -11,12 +11,12 @@ using TMPro;
 public class RoundTimer : MonoBehaviour
 {
     public int time;
-    public int incomeTime;
+    // public int incomeTime;
 
     private TextMeshProUGUI timerText;
     private bool timerStarted;
     private float timeLeft;
-    private float incomeTimer;
+    // private float incomeTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class RoundTimer : MonoBehaviour
 
         timerStarted = false;
         timeLeft = time;
-        incomeTimer = time;
+        // incomeTimer = time;
         SetTimerText();
     }
 
@@ -45,11 +45,13 @@ public class RoundTimer : MonoBehaviour
             }
             SetTimerText();
 
+            /*
             if (timeLeft < incomeTimer)
             {
                 incomeTimer -= incomeTime;
                 gameObject.GetComponent<Money>().GiveIncome();
             }
+            */
         }
     }
 
