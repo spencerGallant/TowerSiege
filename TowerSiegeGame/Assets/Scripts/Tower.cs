@@ -10,19 +10,18 @@ public class Tower : MonoBehaviour
     public float range;
     public int health;
 
-    private float timeRemaining;
-    private GameObject[] units;
-    private Vector3 targetPos;
     private TextMeshPro healthText;
+    private GameObject[] units;
+    private GameObject target;
+    private float timeRemaining;
 
     // Start is called before the first frame update
     void Start()
     {
         healthText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
+
         healthText.SetText(health.ToString());
-
         DrawCircle();
-
         timeRemaining = interval;
     }
 
@@ -36,13 +35,16 @@ public class Tower : MonoBehaviour
         } 
         else if (timeRemaining > 0)
         {
-            targetPos = ClosestUnit();
+            if (target == null)
+            {
+                target = ClosestUnit();
+            }
             timeRemaining -= Time.deltaTime;
         } 
         else
         {
             GameObject projectileClone = Instantiate(projectile, transform.position, Quaternion.identity);
-            projectileClone.GetComponent<Projectile>().setTarget(targetPos);
+            projectileClone.GetComponent<Projectile>().setTarget(target.transform.position);
             timeRemaining = interval;
         }
     }
@@ -58,10 +60,10 @@ public class Tower : MonoBehaviour
         }
     }
 
-    // Returns the position of the closest unit to the tower.
-    private Vector3 ClosestUnit()
+    // Returns the closest unit to the tower (returns a null reference if no units are present).
+    private GameObject ClosestUnit()
     {
-        Vector3 closest = new Vector3();
+        GameObject closest = null;
         float shortestDist = Mathf.Infinity;
         foreach (GameObject currUnit in units)
         {
@@ -69,7 +71,7 @@ public class Tower : MonoBehaviour
             float distance = difference.sqrMagnitude;
             if (distance < shortestDist)
             {
-                closest = currUnit.transform.position;
+                closest = currUnit;
                 shortestDist = distance;
             }
         }
@@ -77,10 +79,10 @@ public class Tower : MonoBehaviour
         return closest;
     }
 
-    // Check if a unit's position is within range.
-    private bool InRange(Vector3 unitPos)
+    // Check if a unit is within range.
+    private bool InRange(GameObject unit)
     {
-        Vector3 difference = unitPos - transform.position;
+        Vector3 difference = unit.transform.position - transform.position;
         float distance = difference.sqrMagnitude;
         if (distance < range * range)
         {
@@ -111,11 +113,5 @@ public class Tower : MonoBehaviour
             Vector3 initialRelativePosition = new Vector3(0, range, 0);
             line.SetPosition(i, transform.position + rotationMatrix.MultiplyPoint(initialRelativePosition));
         }
-    }
-
-    // Set the health text.
-    private void SetHealthText()
-    {
-
     }
 }
