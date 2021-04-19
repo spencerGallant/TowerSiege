@@ -62,4 +62,17 @@ public class UnitQueues : MonoBehaviour
     {
         return unitQueues[queueIndex].Count == 0;
     }
+
+    public bool UnitsQueued()
+    {
+        for (int i = 0; i < queueCount; i++)
+        {
+            if (!IsEmpty(i))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

@@ -1,6 +1,6 @@
 ﻿/*
  * Display the end menu.
- * Keep this script attached to the GameController object
+ * Keep this script attached to the GameController object.
  */
 
 using System.Collections;
@@ -14,6 +14,7 @@ public class EndMenu : MonoBehaviour
     public GameObject endMenu;
     public GameObject endText;
 
+    private GameObject gameController;
     private GameObject castle;
     private GameObject player;
     private bool reloading;
@@ -21,6 +22,7 @@ public class EndMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController");
         castle = GameObject.FindGameObjectWithTag("Castle");
         player = GameObject.FindGameObjectWithTag("Player");
         reloading = false;
@@ -41,10 +43,10 @@ public class EndMenu : MonoBehaviour
             DisplayEndMenu("GAME OVER\nYou died.");
         }
 
-        // End the game if time runs out.
-        if (gameObject.GetComponent<RoundTimer>().TimeUp())
+        // End the game if the player otherwise lost.
+        if (Lost())
         {
-            DisplayEndMenu("GAME OVER\nTime ran out.");
+            DisplayEndMenu("GAME OVER\nYou ran out of money and units.");
         }
     }
 
@@ -64,6 +66,21 @@ public class EndMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    // Check if the player lost.
+    private bool Lost()
+    {
+        if (!(gameController.GetComponent<Money>().HasMoney() || gameController.GetComponent<UnitQueues>().UnitsQueued()))
+        {
+            GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
+            if (units.Length == 0)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // Display the end menu and set the end text.

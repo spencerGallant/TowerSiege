@@ -43,4 +43,15 @@ public class Money : MonoBehaviour
     {
         money -= unit.GetComponent<Unit>().cost;
     }
+
+    // Check if the player has money.
+    public bool HasMoney()
+    {
+        if (money > 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
