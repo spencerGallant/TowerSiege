@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: 6926465532543371224}
   m_Layer: 8
-  m_Name: Vassal
+  m_Name: vassal
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

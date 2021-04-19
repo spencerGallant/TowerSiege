@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1313116555061010301}
   - component: {fileID: 1746888100665825593}
   m_Layer: 8
-  m_Name: FootArcher
+  m_Name: footArcher
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

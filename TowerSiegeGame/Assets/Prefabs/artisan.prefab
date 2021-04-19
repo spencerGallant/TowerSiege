@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: -7426921814964593403}
   m_Layer: 8
-  m_Name: Artisan
+  m_Name: artisan
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

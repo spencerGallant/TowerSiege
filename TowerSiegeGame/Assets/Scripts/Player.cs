@@ -45,28 +45,49 @@ public class Player : MonoBehaviour
 			// Control the player's movement.
 			if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
 			{
+				print("going left");
 				Vector3 position = this.transform.position;
 				position.x = position.x - speed;
 				this.transform.position = position;
+				
+				GetComponent<Animator>().SetTrigger("Left");
 			}
 			if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
 			{
+				print("going right");
 				Vector3 position = this.transform.position;
 				position.x = position.x + speed;
 				this.transform.position = position;
+
+				GetComponent<Animator>().SetTrigger("Right");
+
 			}
 			if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
 			{
+				print("going up");
 				Vector3 position = this.transform.position;
 				position.y = position.y + speed;
 				this.transform.position = position;
+
+				GetComponent<Animator>().SetTrigger("Up");
+
 			}
 			if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
 			{
+				print("going down");
 				Vector3 position = this.transform.position;
 				position.y = position.y - speed;
 				this.transform.position = position;
+
+				GetComponent<Animator>().SetTrigger("Down");
 			}
+
+			// animator stuff
+			// Vector2 dir = this.transform.position;
+			// print(dir.x);
+			// print(dir.y);
+        	// GetComponent<Animator>().SetFloat("DirX", dir.x);
+        	// GetComponent<Animator>().SetFloat("DirY", dir.y);
 
 			// Buff cooldown.
 			if (!buffReady)

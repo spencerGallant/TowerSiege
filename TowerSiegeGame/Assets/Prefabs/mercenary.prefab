@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: 745251092665369281}
   m_Layer: 8
-  m_Name: Mercenary
+  m_Name: mercenary
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -64,6 +64,17 @@ public class Unit : MonoBehaviour
         {
             waypointIndex++;
         }
+
+        // animator stuff
+        // if (transform.position.x > 0) {
+        //     GetComponent<Animator>().SetTrigger("Right");
+        // } else if (transform.position.x < 0) {
+        //     GetComponent<Animator>().SetTrigger("Left");
+        // } else if (transform.position.y > 0) {
+        //     GetComponent<Animator>().SetTrigger("Up");
+        // } else {
+        //     GetComponent<Animator>().SetTrigger("Down");
+        // }
     }
 
     // Set the spawn index to determine which waypoints the unit follows.

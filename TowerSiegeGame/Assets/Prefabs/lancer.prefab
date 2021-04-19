@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 1978991333799170204}
   - component: {fileID: 5607600897414566271}
   m_Layer: 8
-  m_Name: Lancer
+  m_Name: lancer
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
