@@ -13,7 +13,7 @@ public class RoundTimer : MonoBehaviour
 {
     public int time;
 
-    private TextMeshProUGUI timerText;
+    //private TextMeshProUGUI timerText;
     private GameObject startRoundButton;
     private bool timerStarted;
     private float timeLeft;
@@ -21,7 +21,7 @@ public class RoundTimer : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        timerText = GameObject.Find("Canvas/TimerText").GetComponent<TextMeshProUGUI>();
+        //timerText = GameObject.Find("Canvas/TimerText").GetComponent<TextMeshProUGUI>();
         startRoundButton = GameObject.Find("Canvas/SelectionMenu/SoldierBar/StartRoundButton");
 
         timerStarted = false;
@@ -41,7 +41,7 @@ public class RoundTimer : MonoBehaviour
             else
             {
                 timeLeft = 0;
-                timerStarted = false;
+                //timerStarted = false;
             }
             SetTimerText();
         }
@@ -52,7 +52,7 @@ public class RoundTimer : MonoBehaviour
     {
         timerStarted = true;
         startRoundButton.GetComponent<Image>().color = Color.green;
-        timerText.color = Color.yellow;
+        //timerText.color = Color.yellow;
     }
     
     public bool RoundStarted()
@@ -68,12 +68,12 @@ public class RoundTimer : MonoBehaviour
         }
         else
         {
-            return true;
+            return false; // this was true
         }
     }
 
     private void SetTimerText()
     {
-        timerText.SetText("Time: " + timeLeft.ToString("0"));
+        //timerText.SetText("Time: " + timeLeft.ToString("0"));
     }
 }

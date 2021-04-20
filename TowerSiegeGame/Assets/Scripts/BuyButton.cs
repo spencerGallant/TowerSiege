@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class BuyButton : MonoBehaviour
 {
     public int buttonIndex;
+    public GameObject notSelectionText;
 
     private GameObject gameController;
 
@@ -30,10 +31,14 @@ public class BuyButton : MonoBehaviour
     public void BuyUnit()
     {
         GameObject selectedUnit = gameController.GetComponent<UnitQueues>().GetSelected();
-        if (gameController.GetComponent<Money>().CanAfford(selectedUnit))
-        {
-            gameController.GetComponent<UnitQueues>().Enqueue(buttonIndex);
-            gameController.GetComponent<Money>().DeductFunds(selectedUnit);
-        }
+        if(selectedUnit == null) notSelectionText.SetActive(true);
+        else {
+        	notSelectionText.SetActive(false);
+	        if (gameController.GetComponent<Money>().CanAfford(selectedUnit))
+	        {
+	            gameController.GetComponent<UnitQueues>().Enqueue(buttonIndex);
+	            gameController.GetComponent<Money>().DeductFunds(selectedUnit);
+	        }
+	    }
     }
 }
