@@ -75,7 +75,7 @@ public class EndMenu : MonoBehaviour
     // Check if the player lost.
     private bool Lost()
     {
-        if (!gameController.GetComponent<UnitQueues>().UnitsQueued() && timer.TimeUp())
+        if (!gameController.GetComponent<UnitQueues>().UnitsQueued() && !gameController.GetComponent<Money>().HasMoney())
         {
             GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
             if (units.Length == 0)
