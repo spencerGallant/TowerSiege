@@ -54,7 +54,7 @@ public class RoundTimer : MonoBehaviour
         startRoundButton.GetComponent<Image>().color = Color.green;
         timerText.color = Color.yellow;
     }
-
+    
     public bool RoundStarted()
     {
         return timerStarted;
