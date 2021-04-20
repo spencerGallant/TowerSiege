@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: a71f1c4e5ec564c059587689a59b8ad9
+guid: dba624dc0bd5b49de9d81feeaec922f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5539520069877285150
-    second: peasants_0
+      213: 3213645506620586734
+    second: mercenary_0
   - first:
-      213: 4631655717084787706
-    second: peasants_1
+      213: 3632441521295537716
+    second: mercenary_1
   - first:
-      213: -8971770546022779022
-    second: peasants_2
+      213: 2947210863815706779
+    second: mercenary_2
   - first:
-      213: 6933163008313212584
-    second: peasants_3
+      213: 9028587125427967588
+    second: mercenary_3
   - first:
-      213: -7100403634848324704
-    second: peasants_4
+      213: 5267571486925902636
+    second: mercenary_4
   - first:
-      213: 5836554377766038760
-    second: peasants_5
+      213: -4018465462167950626
+    second: mercenary_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 5
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: peasants_0
+      name: mercenary_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 8
-        width: 25
-        height: 23
+        x: 3
+        y: 21
+        width: 86
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ee31d898dbaf13b0800000000000000
-      internalID: -5539520069877285150
+      spriteID: eea7628cf89299c20800000000000000
+      internalID: 3213645506620586734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: peasants_1
+      name: mercenary_1
       rect:
         serializedVersion: 2
-        x: 28
-        y: 9
-        width: 25
-        height: 22
+        x: 91
+        y: 21
+        width: 92
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af3febac552f64040800000000000000
-      internalID: 4631655717084787706
+      spriteID: 43633307156096230800000000000000
+      internalID: 3632441521295537716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: peasants_2
+      name: mercenary_2
       rect:
         serializedVersion: 2
-        x: 60
-        y: 7
-        width: 25
-        height: 24
+        x: 196
+        y: 21
+        width: 87
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 277fffd093edd7380800000000000000
-      internalID: -8971770546022779022
+      spriteID: b9848e76aa896e820800000000000000
+      internalID: 2947210863815706779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: peasants_3
+      name: mercenary_3
       rect:
         serializedVersion: 2
-        x: 95
-        y: 7
-        width: 25
-        height: 23
+        x: 296
+        y: 24
+        width: 83
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ae3368c50b873060800000000000000
-      internalID: 6933163008313212584
+      spriteID: 4669cc2b72cfb4d70800000000000000
+      internalID: 9028587125427967588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: peasants_4
+      name: mercenary_4
       rect:
         serializedVersion: 2
-        x: 122
-        y: 8
-        width: 25
-        height: 22
+        x: 398
+        y: 24
+        width: 94
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a329fe738c467d90800000000000000
-      internalID: -7100403634848324704
+      spriteID: c23d13bcb5c2a1940800000000000000
+      internalID: 5267571486925902636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: peasants_5
+      name: mercenary_5
       rect:
         serializedVersion: 2
-        x: 154
-        y: 6
-        width: 25
-        height: 24
+        x: 503
+        y: 19
+        width: 86
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eceefe784b9ff050800000000000000
-      internalID: 5836554377766038760
+      spriteID: edaad41f3fa8b38c0800000000000000
+      internalID: -4018465462167950626
       vertices: []
       indices: 
       edges: []
