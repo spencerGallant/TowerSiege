@@ -25,7 +25,7 @@ public class Tower : MonoBehaviour
         debuffTimer = 0f;
 
         healthText.SetText(health.ToString());
-        DrawCircle();
+        // DrawCircle();
     }
 
     // Update is called once per frame
