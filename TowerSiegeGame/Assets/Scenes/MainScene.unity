@@ -3096,6 +3096,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endMenu: {fileID: 1871705129}
   endText: {fileID: 873136453}
+  timer: {fileID: 386393021}
+  gold: {fileID: 386393022}
 --- !u!114 &386393021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,7 +3110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7a9e12b136717498ffafa5c6312fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 180
+  time: 10
 --- !u!114 &386393022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19195,6 +19197,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182977218}
     m_Modifications:
+    - target: {fileID: 654683516473024783, guid: a91062ab383367247a266562144b2f30,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 654683516473024783, guid: a91062ab383367247a266562144b2f30,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 654683516473024783, guid: a91062ab383367247a266562144b2f30,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3383752632552809329, guid: a91062ab383367247a266562144b2f30,
         type: 3}
       propertyPath: m_Layer

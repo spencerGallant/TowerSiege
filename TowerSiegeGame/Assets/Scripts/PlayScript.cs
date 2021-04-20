@@ -19,7 +19,13 @@ public class PlayScript : MonoBehaviour
 
     public void PlayGame() {
         Time.timeScale = 1f;
-    	SceneManager.LoadScene("MainScene");
+    	SceneManager.LoadScene("LevelMenu");
+    }
+
+    public void PlayLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainScene");
     }
 
     public void QuitGame() {

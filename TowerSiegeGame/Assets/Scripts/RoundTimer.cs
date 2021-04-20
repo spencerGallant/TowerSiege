@@ -19,7 +19,7 @@ public class RoundTimer : MonoBehaviour
     private float timeLeft;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         timerText = GameObject.Find("Canvas/TimerText").GetComponent<TextMeshProUGUI>();
         startRoundButton = GameObject.Find("Canvas/SelectionMenu/SoldierBar/StartRoundButton");

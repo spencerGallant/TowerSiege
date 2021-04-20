@@ -11,12 +11,14 @@ using TMPro;
 public class Money : MonoBehaviour
 {
     public int money;
+    private int currentMoney = 0;
 
     private TextMeshProUGUI moneyText;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        currentMoney += money;
         moneyText = GameObject.Find("Canvas/MoneyText").GetComponent<TextMeshProUGUI>();
     }
 
@@ -24,13 +26,13 @@ public class Money : MonoBehaviour
     void Update()
     {
         // Update the money text.
-        moneyText.SetText("Money: " + money);
+        moneyText.SetText("Money: " + currentMoney);
     }
 
     // Check if the player can afford purchasing a unit.
     public bool CanAfford(GameObject unit)
     {
-        if (unit.GetComponent<Unit>().cost > money)
+        if (unit.GetComponent<Unit>().cost > currentMoney)
         {
             return false;
         }
@@ -41,13 +43,13 @@ public class Money : MonoBehaviour
     // Decrement money by the unit cost.
     public void DeductFunds(GameObject unit)
     {
-        money -= unit.GetComponent<Unit>().cost;
+        currentMoney -= unit.GetComponent<Unit>().cost;
     }
 
     // Check if the player has money.
     public bool HasMoney()
     {
-        if (money > 0)
+        if (currentMoney > 0)
         {
             return true;
         }
