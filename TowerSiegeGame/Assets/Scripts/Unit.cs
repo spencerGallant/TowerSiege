@@ -89,7 +89,10 @@ public class Unit : MonoBehaviour
         health -= damage;
         SetHealthText();
         if (health <= 0)
-        {
+        {  
+        	GameObject coin = Resources.Load<GameObject>("coin");
+        	int newCost = cost/2;
+            coin.GetComponent<MoneyPickup>().spawnCoins(newCost, transform.position);
             Destroy(gameObject);
         }
     }

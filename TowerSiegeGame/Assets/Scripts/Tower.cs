@@ -73,6 +73,8 @@ public class Tower : MonoBehaviour
         healthText.SetText(health.ToString());
         if (health <= 0)
         {
+            GameObject coin = Resources.Load<GameObject>("coin");
+            coin.GetComponent<MoneyPickup>().spawnCoins(300, transform.position);
             Destroy(gameObject);
         }
     }

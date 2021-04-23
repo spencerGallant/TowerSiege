@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 			// Control the player's movement.
 			if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
 			{
-				print("going left");
+				//print("going left");
 				Vector3 position = this.transform.position;
 				position.x = position.x - speed;
 				this.transform.position = position;
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 			}
 			if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
 			{
-				print("going right");
+				//print("going right");
 				Vector3 position = this.transform.position;
 				position.x = position.x + speed;
 				this.transform.position = position;
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
 			}
 			if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
 			{
-				print("going up");
+				//print("going up");
 				Vector3 position = this.transform.position;
 				position.y = position.y + speed;
 				this.transform.position = position;
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 			}
 			if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
 			{
-				print("going down");
+				//print("going down");
 				Vector3 position = this.transform.position;
 				position.y = position.y - speed;
 				this.transform.position = position;

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Keep track of time left in the round.
  * Keep this script attached to the GameController object and set attributes as desired.
  */
