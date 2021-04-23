@@ -9,6 +9,7 @@ TagManager:
   - Tower
   - MoneyBag
   - Audio
+  - MoneySymbol
   layers:
   - Default
   - TransparentFX
