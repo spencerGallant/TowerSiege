@@ -3,15 +3,14 @@
  * Attach this script to a BuyButton object and set Button Index appropriately.
  */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+ using System.Collections;
+ using System.Collections.Generic;
+ using UnityEngine;
+ using UnityEngine.UI;
 
-public class BuyButton : MonoBehaviour
-{
+ public class BuyButton : MonoBehaviour
+ {
     public int buttonIndex;
-    public GameObject notSelectionText;
 
     private GameObject gameController;
 
@@ -31,14 +30,12 @@ public class BuyButton : MonoBehaviour
     public void BuyUnit()
     {
         GameObject selectedUnit = gameController.GetComponent<UnitQueues>().GetSelected();
-        if(selectedUnit == null) notSelectionText.SetActive(true);
-        else {
-        	notSelectionText.SetActive(false);
-	        if (gameController.GetComponent<Money>().CanAfford(selectedUnit))
-	        {
-	            gameController.GetComponent<UnitQueues>().Enqueue(buttonIndex);
-	            gameController.GetComponent<Money>().DeductFunds(selectedUnit);
-	        }
-	    }
-    }
+        if(selectedUnit != null) {
+           if (gameController.GetComponent<Money>().CanAfford(selectedUnit))
+           {
+               gameController.GetComponent<UnitQueues>().Enqueue(buttonIndex);
+               gameController.GetComponent<Money>().DeductFunds(selectedUnit);
+           }
+       }
+   }
 }
