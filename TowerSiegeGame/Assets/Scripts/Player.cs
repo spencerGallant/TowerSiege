@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!frozen && gameController.GetComponent<RoundTimer>().RoundStarted())
+		if (!frozen)
 		{
 			// Control the player's movement.
 			if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
