@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 
@@ -33,6 +35,8 @@ public class Tower : MonoBehaviour
     {
         // Shoot the closest unit in range.
         units = GameObject.FindGameObjectsWithTag("Unit");
+        GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
+        units = player.Concat(units).ToArray();
         if (units.Length == 0 || !InRange(ClosestUnit()))
         {
             shootTimer = interval;
